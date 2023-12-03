@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request
+from flask import Flask, request, render_template
 from dotenv import load_dotenv
 
 from config.mongodb import mongo
@@ -14,7 +14,7 @@ mongo.init_app(app)
 
 @app.route('/')
 def index():
-    return 'Hello World!'
+    return render_template('index.html')
 
 app.register_blueprint(api_dht, url_prefix='/api/v1')
 

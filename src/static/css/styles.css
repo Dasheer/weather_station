@@ -1,0 +1,32 @@
+@import "https://fonts.googleapis.com/css?family=Lato:300";
+@import "https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css";
+
+html,
+body,
+.background {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  background: #eee;
+}
+
+.background {
+  background: #eee;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+  background: #eee;
+}
