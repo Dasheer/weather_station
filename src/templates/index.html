@@ -13,11 +13,103 @@
     />
   </head>
   <body>
-    <div class="background">
+    <header class="header">
       <div class="container">
-        <div id="sensorData"></div>
+        <a>
+          <img
+            src="{{ url_for('static', filename='img/logo.png') }}"
+            width="364"
+            height="58"
+            alt="logo"
+          />
+        </a>
       </div>
-    </div>
+    </header>
+
+    <main>
+      <article class="container">
+        <div class="content-left">
+          <!--
+            - # Current weather
+          -->
+          <section
+            class="section current-weather"
+            aria-label="current weather"
+            data-current-weather
+          >
+            <div class="card card-lg current-weather-card">
+              <h2 class="title-2 card-title">Tiempo actual</h2>
+
+              <div class="weapper">
+                <div id="temperature"></div>
+                <img
+                  src="{{ url_for('static', filename='img/weather_icons/01d.png') }}"
+                  alt="Overcas Clouds"
+                  class="weather-icon"
+                />
+              </div>
+              <p class="body-3">Soleado</p>
+              <ul class="meta-list">
+                <li class="meta-item">
+                  <span class="m-icon">calendar_today</span>
+                  <p class="title-3 meta-text">Domingo, 3 de Diciembre</p>
+                </li>
+                <li class="meta-item">
+                  <span class="m-icon">location_on</span>
+                  <p class="title-3 meta-text">Calkiní, Campeche</p>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section
+            class="section forecast"
+            aria-label="forecast"
+            fata-5-day-forecast
+          ></section>
+        </div>
+
+        <div class="content-right">
+          <!-- Highlits -->
+          <section
+            class="section highlights"
+            aria-labelledby="highlights-label"
+            data-highlights
+          >
+            <div class="card card-lg">
+              <h2 class="title-2" id="highlights-label">Destacados de hoy</h2>
+              <div class="highlights-list">
+                <div class="card card-sm highlights-card one">
+                  <h3 class="title-3">Viento</h3>
+                  <div class="wrapper">
+                    <span class="m-icon">air</span>
+                    <ul class="card-list">
+                      <li class="card-item">
+                        <p class="title-1">10</p>
+                        <p class="label-1">PM <sub>2.5</sub></p>
+                      </li>
+
+                      <li class="card-item">
+                        <p class="title-1">10</p>
+                        <p class="label-1">PM <sub>2.5</sub></p>
+                      </li>
+
+                      <li class="card-item">
+                        <p class="title-1">10</p>
+                        <p class="label-1">PM <sub>2.5</sub></p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <div id="sensorData"></div>
+
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </body>
 </html>

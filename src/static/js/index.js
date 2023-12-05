@@ -8,10 +8,13 @@ eventSource.onmessage = function (event) {
         const temperature = sensorData.temperature.toFixed(0);
         const humidity = sensorData.humidity.toFixed(0);
 
-        document.getElementById("sensorData").innerHTML = `
-            <p>Temperature: ${temperature} °C</p>
+        document.getElementById("temperature").innerHTML = `
+            <p class="heading">${temperature}&deg;<sup>c</sup></p>
+        `;
+
+        document.getElementById("humidity").innerHTML = `
             <p>Humidity: ${humidity} %</p>
-          `;
+        `;
     } catch (error) {
         console.error("Error parsing JSON:", error);
     }
