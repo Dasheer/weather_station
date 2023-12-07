@@ -11,6 +11,10 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/styles.css') }}"
     />
+     <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/weather-icons.min.css') }}"
+    />
   </head>
   <body>
     <header class="header">
@@ -52,7 +56,7 @@
               <ul class="meta-list">
                 <li class="meta-item">
                   <span class="m-icon">calendar_today</span>
-                  <p class="title-3 meta-text">Domingo, 3 de Diciembre</p>
+                  <div id="currentDate"></div>
                 </li>
                 <li class="meta-item">
                   <span class="m-icon">location_on</span>
@@ -78,8 +82,8 @@
           >
             <div class="card card-lg">
               <h2 class="title-2" id="highlights-label">Destacados de hoy</h2>
-              <div class="highlights-list">
-                <div class="card card-sm highlights-card one">
+              <div class="highlight-list">
+                <div class="card card-sm highlight-card">
                   <h3 class="title-3">Viento</h3>
                   <div class="wrapper">
                     <span class="m-icon">air</span>
@@ -98,17 +102,75 @@
                         <p class="title-1">10</p>
                         <p class="label-1">PM <sub>2.5</sub></p>
                       </li>
+
+                      <li class="card-item">
+                        <p class="title-1">10</p>
+                        <p class="label-1">PM <sub>2.5</sub></p>
+                      </li>
                     </ul>
                   </div>
+
+                  <span class="badge aqi-1 label-1" title="aqi message"
+                    >Bueno</span
+                  >
                 </div>
+
+                <div class="card card-sm highlight-card">
+                  <h3 class="title-3">Humedad</h3>
+                  <div class="wrapper">
+                    <span class="m-icon">humidity_percentage</span>
+                    <div>
+                      <div id="humidity"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card card-sm highlight-card">
+                  <h3 class="title-3">Presión</h3>
+                  <div class="wrapper">
+                    <span class="m-icon">airwave</span>
+                    <div>
+                      <div id="pressure"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card card-sm highlight-card">
+                  <h3 class="title-3">Dirección del viento</h3>
+                  <div class="wrapper">
+                    <span class="m-icon">explorer</span>
+                    <div>
+                      <div id="visibility"></div>
+                    </div>
+                  </div>
+
               </div>
             </div>
           </section>
         </div>
+
+        <div class="loading" data-loading>
+          <footer class="footer">
+          <div id="copyright" class="body-3"></div>
+          <p class="body-3" title="Weather Station">
+            Powered By Dasheer
+          </p>
+        </footer>
+        </div>
+
       </article>
     </main>
 
-    <div id="sensorData"></div>
+    <!--
+      - # 404
+    -->
+    <section class="error-content" data-error-content>
+      <h2 class="heading">404</h2>
+      <p class="body-1">No se pudo encontrar la página</p>
+      <a href="/" class="btn btn-primary">
+        <span class="span">Volver a la página de inicio</span>
+      </a>
+    </section>
 
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </body>
