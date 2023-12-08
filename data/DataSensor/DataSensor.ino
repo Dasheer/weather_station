@@ -10,8 +10,6 @@
 WiFiClient client;
 HTTPClient http;
 // Inicialización
-// const char *ssid = "KBLEX.4.241";
-// const char *password = "73746683";
 
 const char *ssid = "9_Pro";
 const char *password = "isc2023p";
