@@ -8,7 +8,7 @@ def get_dht_data():
     def generate():
         while True:
             # Obtiene el último registro de la colección sensor_data
-            data_cursor = mongo.db.sensor_data.find({'sensor_type': 'dht'}).sort([('_id', -1)]).limit(1)
+            data_cursor = mongo.db.sensor_dht.find({'sensor_type': 'dht'}).sort([('_id', -1)]).limit(1)
 
             # Convierte el cursor en una lista
             data_list = list(data_cursor)
@@ -44,7 +44,7 @@ def save_sensor_data():
         temperature = data['temperature']
         humidity = data['humidity']
         if sensor_type and temperature and humidity:
-            id = mongo.db.sensor_data.insert_one({
+            id = mongo.db.sensor_dht.insert_one({
                 'sensor_type': sensor_type,
                 'temperature': temperature,
                 'humidity': humidity

@@ -422,7 +422,7 @@ article.container::before {
   position: relative;
 }
 
-.highlight-card :is(.wrapper, .card-list, .card-item) {
+.highlight-card :is(.wrapper, .card-item) {
   display: flex;
   align-items: center;
 }
@@ -430,12 +430,6 @@ article.container::before {
 .highlight-card .wrapper {
   justify-content: space-between;
   gap: 16px;
-}
-
-.highlight-card .card-list {
-  flex-wrap: wrap;
-  flex-grow: 1;
-  row-gap: 8px;
 }
 
 .highlight-card .card-item {
@@ -637,9 +631,9 @@ article.container::before {
     font-size: 3.6rem;
   }
 
-  .highlight-card.one .card-item {
-    width: 25%;
-    flex-direction: column-reverse;
+  .highlight-card .card-item {
+    /* width: 25%; */
+    /* flex-direction: column-reverse; */
     gap: 8px;
   }
 

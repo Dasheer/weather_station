@@ -21,7 +21,7 @@
       <div class="container">
         <a>
           <img
-            src="{{ url_for('static', filename='img/logo.png') }}"
+            alt="Weather Station"
             width="364"
             height="58"
             alt="logo"
@@ -44,15 +44,13 @@
             <div class="card card-lg current-weather-card">
               <h2 class="title-2 card-title">Tiempo actual</h2>
 
-              <div class="weapper">
-                <div id="temperature"></div>
-                <img
-                  src="{{ url_for('static', filename='img/weather_icons/01d.png') }}"
-                  alt="Overcas Clouds"
-                  class="weather-icon"
-                />
+              <div ="temperature" class="weapper">
+                <div id="temperature"
+                data-img-cold="{{ url_for('static', filename='img/weather_icons/13d.png') }}"
+                data-img-cloudy="{{ url_for('static', filename='img/weather_icons/02d.png') }}"
+                data-img-sunny="{{ url_for('static', filename='img/weather_icons/01d.png') }}"
+                ></div>
               </div>
-              <p class="body-3">Soleado</p>
               <ul class="meta-list">
                 <li class="meta-item">
                   <span class="m-icon">calendar_today</span>
@@ -84,20 +82,10 @@
               <h2 class="title-2" id="highlights-label">Destacados de hoy</h2>
               <div class="highlight-list">
                 <div class="card card-sm highlight-card">
-                  <h3 class="title-3">Viento</h3>
+                  <h3 class="title-3">Velocidad del viento</h3>
                   <div class="wrapper">
                     <span class="m-icon">air</span>
-                    <ul class="card-list">
-                      <li class="card-item">
-                        <p class="title-1">10</p>
-                        <p class="label-1">PM <sub>2.5</sub></p>
-                      </li>
-
-                      <li class="card-item">
-                        <p class="title-1">10</p>
-                        <p class="label-1">PM <sub>2.5</sub></p>
-                      </li>
-                    </ul>
+                    <div id="anemometro"></div>
                   </div>
 
                   <span class="badge aqi-1 label-1" title="aqi message"
@@ -129,9 +117,7 @@
                   <h3 class="title-3">Dirección del viento</h3>
                   <div class="wrapper">
                     <span class="m-icon">explorer</span>
-                    <div>
-                      <div id="visibility"></div>
-                    </div>
+                    <div id="windVelocity"></div>
                   </div>
 
               </div>
